@@ -1,23 +1,35 @@
 package zad3;
 
-public class Car {
-    double maxSpeed;
-    String carName;
+public abstract class Car {
+    SpeedBehavior speedBehavior;
+    NameBehavior nameBehavior;
+
+
+    public void setSpeedBehavior(SpeedBehavior speedBehavior)
+    {
+       this.speedBehavior = speedBehavior;
+    }
+
+    public void setNameBehavior(NameBehavior nameBehavior)
+    {
+        this.nameBehavior = nameBehavior;
+    }
 
     //konstruktor
-    public Car(String carName, double maxSpeed)
+    public Car() {}
+    public Car(NameBehavior nameBehavior, SpeedBehavior speedBehavior)
     {
-        this.maxSpeed = maxSpeed;
-        this.carName = carName;
+        this.nameBehavior = nameBehavior;
+        this.speedBehavior = speedBehavior;
     }
 
-    public void getMaxSpeed()
+    //metody pokazywania danych
+    public void showSpeedBehavior()
     {
-        System.out.println(this.maxSpeed);;
+        speedBehavior.speed();
     }
-
-    public void showCarName()
+    public void showNameBehavior()
     {
-        System.out.println(this.carName);
+        nameBehavior.name();
     }
 }
