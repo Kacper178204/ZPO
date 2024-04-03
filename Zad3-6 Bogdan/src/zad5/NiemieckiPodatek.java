@@ -1,8 +1,9 @@
 package zad5;
 
-public class NiemieckiPodatek implements TaxRate{
-    @Override
-    public void showTaxRate() {
-        System.out.println("Podatek w Niemczech to 19%");
+public class NiemieckiPodatek implements Podatek{
+    double wartoscPodatku = 0.19;
+
+    public double policzPodatek(double cena){
+        return cena * wartoscPodatku;
     }
 }

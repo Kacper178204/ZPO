@@ -1,9 +1,9 @@
 package zad5;
 
-public class PolskiPodatek implements TaxRate{
+public class PolskiPodatek implements Podatek{
+    double wartoscPodatku = 0.23;
 
-    @Override
-    public void showTaxRate() {
-        System.out.println("Podatek w Polsce to 23%");
+    public double policzPodatek(double cena){
+        return cena * wartoscPodatku;
     }
 }
